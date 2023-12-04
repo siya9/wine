@@ -1,0 +1,89 @@
+docker build -t winestable .
+
+docker run -it winestable
+
+ls -al
+
+wine exness4setup.exe
+
+cd root
+
+ls -al
+
+cd .wine
+
+or cd ".wine/drive_c/Program Files (x86)"
+
+------------------------------------------------------------
+docker ps
+docker exec -it 82b65872eedb60cca739640b0496fe6f01189ee7d90d6d092705312786445831 /bin/bash
+
+exit
+
+docker stop 0919459f9bf8e6cc40f6b8ca1807b01b03475882ad592478e181c11c0b593b15
+
+------------------------------------------------------------
+mv 'FTMO 100K.set' ../'drive_c/Program Files (x86)/MetaTrader 4 EXNESS/MQL4/Presets'
+.wine/drive_c/Program Files (x86)/MetaTrader 4 EXNESS/MQL4/Experts
+
+mv 
+rm -r folder
+
+nohup wine terminal.exe &
+
+------------------ssh
+docker build -t xrman .
+docker run -it --name xrdp -p 3388:3389 -d xrdp
+
+docker exec -it 2fb8f620184ef48711835bd79b864609d9444d19b57bc7f7a84c4e9153c93b39 /bin/bash
+
+cd ../
+
+apt update
+
+apt install openssh-server
+
+service --status-all
+
+passwd root
+
+apt install vim
+
+vim /etc/ssh/sshd_config
+
+PermitRootLogin Yes
+
+service ssh start
+
+>>>>>>>> on my machine <<<<<<<<<<<<<<<<<<<<
+ssh root@localhost -p 2200
+
+apt-get install xrdp
+
+apt install -y xfce4
+apt install -y xfce4-goodies
+apt-get install xfce4-terminal
+update-alternatives --config x-terminal-emulator
+cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+echo xfce4-session > ~/.xsession
+
+apt install vim
+vim /etc/xrdp/startwm.sh
+
+!comment these lines to:
+#test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+#exec /bin/sh /etc/X11/Xsession
+
+!add these lines:
+# xfce
+startxfce4
+
+/etc/init.d/xrdp start
+
+service xrdp stop
+service xrdp start
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' xrman
